@@ -229,7 +229,7 @@ class FileHandler
 
 
 
-public class CeasarCipher 
+public class CaesarCipher 
 {
     private static FileHandler fileHandler;
 
