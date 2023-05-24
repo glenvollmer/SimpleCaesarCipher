@@ -160,13 +160,41 @@ public class CaesarCipher
             case "decryptFile":
                 fileHandler = new FileHandler(filePath);
                 result = decryptFile(key);
-                break;                                
+                break;                              
             
             default:
+                helpCommand();
                 break;
         }
 
         return result;
+    }
+
+    private static void helpCommand()
+    {
+        String helpTitle = "Simple Caesar Cipher CLI Tool.";
+        String author = "Written by glenvollmer.";
+        String caesarCipherUsage = "Usage: java CaesarCipher <command> <key> <string || .txt file>";
+        
+        String commandTitle = "Commands:";
+        String encryptCommandUsage = "encrypt: encrypt a string wrapped by double quotes.";
+        String decryptCommandUsage = "decrypt: decrypt a string wrapped by double quotes.";
+        String encryptFileCommandUsage = "encryptFile: encrypt the contents of a .txt file";
+        String decryptFileCommandUsage = "decryptFile: decrypt the contents of a .txt file";
+        String keyDescription = "key: an integer that is used to encrypt or decrypt";
+
+        System.out.println(helpTitle);
+        System.out.println(author);
+        System.out.println("\n");
+        System.out.println(caesarCipherUsage);
+        System.out.println("\n");
+        System.out.println(commandTitle);
+        System.out.println(encryptCommandUsage);
+        System.out.println(decryptCommandUsage);
+        System.out.println(encryptFileCommandUsage);
+        System.out.println(decryptFileCommandUsage);
+        System.out.println(keyDescription);
+
     }
 
 

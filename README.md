@@ -9,9 +9,10 @@ A simple Caesar Cipher CLI program written in Java in order to start practicing 
 * run `java CaesarCipher decryptFile 7 ./test_output.txt` to decrypt the txt file with a key of 7
 
 **To Do**
- - [ ] Add help command
+ - [x] Break out classes into seperate files
+ - [x] Add help command
+ - [ ] Ignore special characters
  - [ ] Add more verbose console logs
  - [ ] Add error handling
- - [x] Break out classes into seperate files
 
 
