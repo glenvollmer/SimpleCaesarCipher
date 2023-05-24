@@ -12,6 +12,6 @@ A simple Caesar Cipher CLI program written in Java in order to start practicing 
  - [ ] Add help command
  - [ ] Add more verbose console logs
  - [ ] Add error handling
- - [ ] Break out classes into seperate files
+ - [x] Break out classes into seperate files
 
 
