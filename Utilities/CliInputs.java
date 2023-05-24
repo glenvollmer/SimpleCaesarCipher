@@ -1,16 +1,11 @@
 package Utilities;
 
-import java.io.*;
-import java.util.*;
-import java.util.stream.*;
-import java.lang.Character;
-
 public class CliInputs
 {
-    public static int key;
-    public static String action;
-    public static String text;
-    public static String filePath;
+    public int key;
+    public String action;
+    public String text;
+    public String filePath;
 
 
     public CliInputs(String[] args) 
@@ -56,7 +51,7 @@ public class CliInputs
     }
 
 
-    private static boolean setKey(int k) 
+    private boolean setKey(int k) 
     {
         try 
         {
@@ -69,7 +64,7 @@ public class CliInputs
             {
                 keyValue = k;
             }
-            key = k;        
+            key = keyValue;        
         }
         catch(Exception e) 
         {
@@ -80,7 +75,7 @@ public class CliInputs
     }
 
 
-    private static boolean setAction(String a) 
+    private boolean setAction(String a) 
     {
         // check to see if the action is valid
         try 
@@ -96,7 +91,7 @@ public class CliInputs
     }
 
 
-    private static boolean setText(String t)
+    private boolean setText(String t)
     {
         try 
         {
@@ -111,7 +106,7 @@ public class CliInputs
     }
 
 
-    private static boolean setFilePath(String p)
+    private boolean setFilePath(String p)
     {
         // check to see if file exists/valid file path
          try 

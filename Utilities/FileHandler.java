@@ -2,8 +2,6 @@ package Utilities;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.*;
-import java.lang.Character;
 
 public class FileHandler
 {
@@ -46,7 +44,7 @@ public class FileHandler
     }
 
 
-    public static String writeOutputFile(String data)
+    public String writeOutputFile(String data)
     {
         String outputFile = createOutputFile();
 
@@ -66,7 +64,7 @@ public class FileHandler
     }
 
 
-    public static String readInputFile()
+    public String readInputFile()
     {
         String data = "";
 
