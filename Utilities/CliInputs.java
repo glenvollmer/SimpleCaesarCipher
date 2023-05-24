@@ -19,9 +19,12 @@ public class CliInputs
         boolean setActionSuccess = setAction(action);
         handleError(setActionSuccess, "Error with action");
 
-        int key = Integer.parseInt(args[1]);
-        boolean setKeySuccess = setKey(key);
-        handleError(setKeySuccess, "Error with encryption key");
+        if (!action.equals("help"))
+        {
+            int key = Integer.parseInt(args[1]);
+            boolean setKeySuccess = setKey(key);
+            handleError(setKeySuccess, "Error with encryption key");
+        }
 
         if (action.equals("encrypt")
         || action.equals("decrypt"))
