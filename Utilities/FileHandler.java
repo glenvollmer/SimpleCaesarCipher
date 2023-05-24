@@ -2,8 +2,6 @@ package Utilities;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.*;
-import java.lang.Character;
 
 public class FileHandler
 {
@@ -14,7 +12,7 @@ public class FileHandler
         boolean fileExists = setFile(f);
         if (!fileExists)
         {
-            // handle error here
+            System.out.println("An error occurred while trying to read the input file.");
             return;
         }
     }
@@ -29,16 +27,11 @@ public class FileHandler
         {
             outputFileName = filenameNoExtension + "_output.txt";
             File fileObj = new File(outputFileName);
-            boolean fileCreated = fileObj.createNewFile();
-
-            if (!fileCreated) 
-            {
-                System.out.println("error creating output file");
-            }
+            fileObj.createNewFile();
         } 
         catch (IOException e) 
         {
-            System.out.println("An error occurred.");
+            System.out.println("An error occurred while creating the output file.");
             e.printStackTrace();
         }
 
@@ -46,27 +39,29 @@ public class FileHandler
     }
 
 
-    public static String writeOutputFile(String data)
+    public String writeOutputFile(String data)
     {
         String outputFile = createOutputFile();
-
         try 
         {
             FileWriter file = new FileWriter(outputFile);
             file.write(data);
             file.close();
+            
+            String outputMsg = "file output: " + outputFile;
+            return outputMsg;
 
         } 
         catch (IOException e) 
         {
-            System.out.println("An error occurred.");
+            String errMsg = "An error occurred while creating the output file.";
             e.printStackTrace();
+            return errMsg;
         }
-        return "file path goes here";
     }
 
 
-    public static String readInputFile()
+    public String readInputFile()
     {
         String data = "";
 
@@ -85,7 +80,7 @@ public class FileHandler
         }
         catch (FileNotFoundException e)
         {
-            System.out.println("An error occurred.");
+            System.out.println("An error occurred while reading the input file.");
             e.printStackTrace();
 
         }

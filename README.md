@@ -12,7 +12,7 @@ A simple Caesar Cipher CLI program written in Java in order to start practicing 
  - [x] Break out classes into seperate files
  - [x] Add help command
  - [x] Ignore special characters
- - [ ] Add more verbose console logs
- - [ ] Add error handling
+ - [x] Add more verbose console logs
+ - [x] Add error handling
 
 
