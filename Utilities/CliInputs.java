@@ -19,23 +19,25 @@ public class CliInputs
         boolean setActionSuccess = setAction(action);
         handleError(setActionSuccess, "Error with action");
 
-        if (!action.equals("help"))
+        boolean encryptOrDecrypt = action.equals("encrypt") || action.equals("decrypt");
+        boolean encryptFileOrDecryptFile = action.equals("encryptFile") || action.equals("decryptFile");
+
+
+        if (encryptOrDecrypt || encryptFileOrDecryptFile)
         {
             int key = Integer.parseInt(args[1]);
             boolean setKeySuccess = setKey(key);
             handleError(setKeySuccess, "Error with encryption key");
         }
 
-        if (action.equals("encrypt")
-        || action.equals("decrypt"))
+        if (encryptOrDecrypt)
         {
             String text = args[2];
             boolean setTextSuccess = setText(text);
             handleError(setTextSuccess, "Error with text");
 
         }
-        else if (action.equals("encryptFile")
-        || action.equals("decryptFile"))
+        else if (encryptFileOrDecryptFile)
         {
             String filePath = args[2];
             boolean setFilePathSuccess = setFilePath(filePath);
