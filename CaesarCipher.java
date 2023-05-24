@@ -73,10 +73,13 @@ public class CaesarCipher
                 sb.append(ch);
                 continue;
             }
-
+            
             int i = new String(plainAlphabet).indexOf(ch);
-            char c = ciphertextAlphabet[i];
-            sb.append(c);
+            if (i != -1)
+            {
+                char c = ciphertextAlphabet[i];
+                sb.append(c);
+            }
         }
 
         cipher = sb.toString();
@@ -100,9 +103,11 @@ public class CaesarCipher
             }
             
             int i = new String(ciphertextAlphabet).indexOf(ch);
-
-            char c = plainAlphabet[i];
-            sb.append(c);
+            if (i != -1)
+            {
+                char c = plainAlphabet[i];
+                sb.append(c);
+            }
         }
 
         message = sb.toString();
